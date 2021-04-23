@@ -1,0 +1,22 @@
+<template>
+    <div class="slds-m-around_medium"> 
+        <lightning-input type = "search" value={searchKey} onchange={handleKeywordChange}>
+        </lightning-input>
+    </div>
+    <lightning-card title="Inline Edit With Lightning Datatable in LWC">
+        <template if:true={accounts}>
+            <lightning-datatable key-field="Id" 
+                                 data={accounts} 
+                                 columns={columns} 
+                                 onsave={handleSave}
+                                 draft-values={saveDraftValues} 
+                                 hide-checkbox-column 
+                                 show-row-number-column
+                                 default-sort-direction={defaultSortDirection}
+                                sorted-direction={sortDirection}
+                                sorted-by={sortedBy}
+                                onsort={onHandleSort}>
+            </lightning-datatable>
+        </template>
+    </lightning-card>
+</template>
